@@ -53,14 +53,14 @@ class UiMainWindow(object):
         self.HermitCheck.setObjectName("HermitCheck")
         self.verticalLayout.addWidget(self.HermitCheck)
         self.groupBox_3 = QtWidgets.QGroupBox(self.groupBox)
-        self.groupBox_3.setGeometry(QtCore.QRect(58, 350, 100, 250))
+        self.groupBox_3.setGeometry(QtCore.QRect(58, 350, 120, 250))
         self.groupBox_3.setObjectName("groupBox_3")
 
         self.groupBox_3.setStyleSheet(
             "background-color:#E788F5")
 
         self.layoutWidget1 = QtWidgets.QWidget(self.groupBox_3)
-        self.layoutWidget1.setGeometry(QtCore.QRect(20, 40, 61, 171))
+        self.layoutWidget1.setGeometry(QtCore.QRect(20, 40, 85, 171))
         self.layoutWidget1.setObjectName("layoutWidget1")
         self.verticalLayout_2 = QtWidgets.QVBoxLayout(self.layoutWidget1)
         self.verticalLayout_2.setContentsMargins(0, 0, 0, 0)
