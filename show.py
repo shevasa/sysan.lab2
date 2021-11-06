@@ -51,7 +51,7 @@ class PolynomialBuilder(object):
                                  for i in range(self._solution.Y.shape[1])]
         f_strings_transformed_denormed = ['(F{0}) transformed ' \
                                           'denormed:\n{result}\n'.format(i + 1, result=
-        self._print_F_i_transformed_denormed(i))
+        self._print_F_i_transformed(i))
                                           for i in range(self._solution.Y.shape[1])]
         return '\n'.join(psi_strings + phi_strings + f_strings + f_strings_transformed + f_strings_transformed_denormed)
 
@@ -64,7 +64,7 @@ class PolynomialBuilder(object):
         std_coeffs = np.zeros(coeffs.shape)
         for index in range(coeffs.shape[0]):
             cp = self.basis[index].coef.copy()
-            cp.resize(coeffs.shape)
+            cp.resize(coeffs.shape, refcheck=False)
             std_coeffs += coeffs[index] * cp
         return std_coeffs
 
@@ -179,6 +179,8 @@ class PolynomialBuilder(object):
 
     def plot_graphs(self):
         fig, axes = plt.subplots(2, self._solution.Y.shape[1])
+        fig.set_figwidth(20)
+        fig.set_figheight(15)
         if self._solution.Y.shape[1] == 1:
             axes[0] = [axes[0]]
             axes[1] = [axes[1]]
@@ -206,6 +208,7 @@ class PolynomialBuilder(object):
 
         manager = plt.get_current_fig_manager()
         manager.set_window_title('Graph')
+        fig.tight_layout()
         if os_name == 'posix':
             fig.show()
         else:
