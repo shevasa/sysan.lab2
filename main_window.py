@@ -219,14 +219,14 @@ class UiMainWindow(object):
         self.label_11.setObjectName("label_11")
 
         self.groupBox_6 = QtWidgets.QGroupBox(self.centralwidget)
-        self.groupBox_6.setGeometry(QtCore.QRect(0, 0, 0, 0))
+        self.groupBox_6.setGeometry(QtCore.QRect(30, 550, 540, 140))
         self.groupBox_6.setObjectName("groupBox_6")
 
         self.groupBox_6.setStyleSheet(
-            "background-color:#befee6;font-weight:bold")
+            "background-color:#FBFBFB;font-weight:bold")
 
         self.layoutWidget4 = QtWidgets.QWidget(self.groupBox_6)
-        self.layoutWidget4.setGeometry(QtCore.QRect(10, 30, 389, 27))
+        self.layoutWidget4.setGeometry(QtCore.QRect(10, 25, 480, 30))
         self.layoutWidget4.setObjectName("layoutWidget4")
         self.horizontalLayout_9 = QtWidgets.QHBoxLayout(self.layoutWidget4)
         self.horizontalLayout_9.setContentsMargins(0, 0, 0, 0)
@@ -237,14 +237,15 @@ class UiMainWindow(object):
 
         self.FunctionWeight = QtWidgets.QComboBox(self.layoutWidget4)
         self.FunctionWeight.setObjectName("FunctionWeight")
-        self.FunctionWeight.addItem("")
+        self.FunctionWeight.addItem("Average")
+        self.FunctionWeight.addItem("Scaled")
         self.horizontalLayout_9.addWidget(self.FunctionWeight)
         self.LambdaCheck = QtWidgets.QCheckBox(self.groupBox_6)
-        self.LambdaCheck.setGeometry(QtCore.QRect(10, 70, 311, 23))
+        self.LambdaCheck.setGeometry(QtCore.QRect(10, 70, 510, 30))
         self.LambdaCheck.setObjectName("LambdaCheck")
 
         self.groupBox_7 = QtWidgets.QGroupBox(self.centralwidget)
-        self.groupBox_7.setGeometry(QtCore.QRect(30, 320, 530, 280))
+        self.groupBox_7.setGeometry(QtCore.QRect(30, 280, 540, 260))
 
         self.groupBox_7.setStyleSheet(
             "background-color:#FBFBFB;font-weight:bold")
@@ -312,10 +313,10 @@ class UiMainWindow(object):
         self.groupBox_6.setTitle(_translate("MainWindow", "Additional"))
         self.label_9.setText(_translate(
             "MainWindow", "Weights of target functions:"))
-        self.FunctionWeight.setCurrentText(_translate("MainWindow", "Average"))
-        self.FunctionWeight.setItemText(0, _translate("MainWindow", "Average"))
+        # self.FunctionWeight.setCurrentText(_translate("MainWindow", "Scaled"))
+        # self.FunctionWeight.setItemText(0, _translate("MainWindow", "Average"))
         self.LambdaCheck.setText(_translate(
-            "MainWindow", "Calculate ?group from 3 systems of equations"))
+            "MainWindow", "Calculate group from 3 systems of equations?"))
         self.groupBox_7.setTitle(_translate(
             "MainWindow", "                                Виконання"))
         self.pushButton.setText(_translate(

@@ -48,7 +48,6 @@ class Calculate(object):
                 vec[i, j] = (self.datas[i, j] - minv) / (maxv - minv)
         self.data = np.matrix(vec)
 
-
     def _minimize_equation(self, A, b, type='cjg'):
         """
         Знаходить такий вектор x що |Ax-b|->min.
@@ -61,6 +60,7 @@ class Calculate(object):
         elif type == 'cjg':
             return calculate_coordinate_descent(A.T * A, A.T * b,
                                                 self.eps)  # --------------------------оптимізація
+
     def define_norm_vectors(self):
         print('Define trans vectors starts')
         '''
@@ -98,7 +98,7 @@ class Calculate(object):
 
         if self.weights == u'Average':
             self.B = B_average()
-        elif self.weights == u'������ ���������':
+        elif self.weights == u'Scaled':
             self.B = B_scaled()
         else:
             print(self.weights)
@@ -213,7 +213,7 @@ class Calculate(object):
             a1 = self._minimize_equation(self.Psi[i][:, :self.degf[0]], self.Y[:, i])
             a2 = self._minimize_equation(self.Psi[i][:, self.degf[0]:self.degf[1]], self.Y[:, i])
             a3 = self._minimize_equation(self.Psi[i][:, self.degf[1]:], self.Y[:, i])
-            
+
             self.a = np.append(self.a, np.vstack((a1, a2, a3)), axis=1)
 
     def built_F1i(self, psi, a):
