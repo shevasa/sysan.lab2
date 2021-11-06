@@ -68,6 +68,7 @@ class MyWindow(QtWidgets.QMainWindow):
         self.weight_method = self.ui.FunctionWeight.currentText()
 
     def calc_clicked(self):
+        self.refresh_data()
         try:
             self.ui.pushButton.setEnabled(False)
             solver = Calculate(self.__get_params())
